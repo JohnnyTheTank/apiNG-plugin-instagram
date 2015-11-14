@@ -1,10 +1,10 @@
 {
-  "name": "apiNG-instagram-plugin",
-  "homepage": "https://github.com/JohnnyTheTank/apiNG-instagram-plugin",
+  "name": "apiNG-plugin-instagram",
+  "homepage": "https://github.com/JohnnyTheTank/apiNG-plugin-instagram",
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "instagram plugin for apiNG",
   "main": "dist/angular-instagram-directive.min.js",
   "moduleType": [],
