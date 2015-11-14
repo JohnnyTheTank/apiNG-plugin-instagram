@@ -13,6 +13,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/dist\/apiNG-instagram-directive.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dist\/apiNG-instagram-directive.min.js",
+		"outputAbbreviatedPath": "\/dist\/apiNG-instagram-directive.min.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/dist\/apiNG-instagram-helper.min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -24,14 +35,14 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/dist\/apiNG-instagram-plugin.min.js": {
+	"\/src\/apiNG-instagram-directive.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/dist\/apiNG-instagram-plugin.min.js",
-		"outputAbbreviatedPath": "\/dist\/apiNG-instagram-plugin.min.min.js",
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/src\/apiNG-instagram-directive.js",
+		"outputAbbreviatedPath": "\/dist\/apiNG-instagram-directive.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
@@ -41,17 +52,6 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/src\/apiNG-instagram-helper.js",
 		"outputAbbreviatedPath": "\/dist\/apiNG-instagram-helper.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
-	"\/src\/apiNG-instagram-plugin.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/src\/apiNG-instagram-plugin.js",
-		"outputAbbreviatedPath": "\/dist\/apiNG-instagram-plugin.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
