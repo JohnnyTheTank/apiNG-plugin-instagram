@@ -118,7 +118,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
             return false;
         }
 
-        var imageObject = apingOutputObjects.getNew("video", "instagram");
+        var imageObject = apingOutputObjects.getNew("image", "instagram");
 
         $.extend(true, imageObject, {
             blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
