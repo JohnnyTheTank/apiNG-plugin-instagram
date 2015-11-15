@@ -119,7 +119,6 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
         }
 
         var imageObject = apingOutputObjects.getNew("image", "instagram");
-
         $.extend(true, imageObject, {
             blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
@@ -137,12 +136,9 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
         });
 
         imageObject.text = this.replaceHashtagWithoutSpaces(imageObject.text);
-
         imageObject.img_url = _item.images.standard_resolution.url;
-
         return imageObject;
     };
-
 
     this.replaceHashtagWithoutSpaces = function(_string) {
         if(_string && $.type(_string) === "string") {

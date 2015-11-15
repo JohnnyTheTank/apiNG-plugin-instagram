@@ -36,12 +36,8 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         }).error(function (_data) {
                             //on error
                         });
-
-
                     } else if (request.tag) { //search for searchterm
-
                         instagramSearchObject.tag = request.tag;
-
                         instagramFactory.getPostsByTag(instagramSearchObject).success(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, appSettings.type));
                         }).error(function (_data) {
