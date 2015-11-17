@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "instagram plugin for apiNG",
   "main": "dist/angular-instagram-directive.min.js",
   "moduleType": [],
@@ -25,6 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-instagram-api-factory": "*"
+    "angular-instagram-api-factory": "*",
+    "apiNG": "*"
   }
 }

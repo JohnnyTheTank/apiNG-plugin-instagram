@@ -6,7 +6,7 @@
  @licence MIT
  */
 
-jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingTimeHelper', 'apingUtilityHelper', function (apingOutputObjects, apingTimeHelper, apingUtilityHelper) {
+jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelper', 'apingUtilityHelper', function (apingModels, apingTimeHelper, apingUtilityHelper) {
     this.getObjectByJsonData = function (_data, _type) {
         var requestResults = [];
         if (_data) {
@@ -43,7 +43,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
     };
 
     this.getSocialItemByJsonData = function (_item) {
-        var socialObject = apingOutputObjects.getNew("social", "instagram");
+        var socialObject = apingModels.getNew("social", "instagram");
 
         $.extend(true, socialObject, {
             blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
@@ -87,7 +87,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
             return false;
         }
 
-        var videoObject = apingOutputObjects.getNew("video", "instagram");
+        var videoObject = apingModels.getNew("video", "instagram");
 
         $.extend(true, videoObject, {
             blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
@@ -118,7 +118,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingOutputObjects', 'apingT
             return false;
         }
 
-        var imageObject = apingOutputObjects.getNew("image", "instagram");
+        var imageObject = apingModels.getNew("image", "instagram");
         $.extend(true, imageObject, {
             blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
