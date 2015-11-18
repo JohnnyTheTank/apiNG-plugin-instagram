@@ -7,7 +7,8 @@ module.exports = function(grunt) {
                 files : {
                     'dist/aping-plugin-instagram.min.js' : [
                         'src/aping-instagram-directive.js',
-                        'src/aping-instagram-helper.js'
+                        'src/aping-instagram-helper.js',
+                        'bower_components/angular-instagram-api-factory/src/angular-instagram-api-factory.js'
                     ]
                 }
             },
@@ -19,7 +20,9 @@ module.exports = function(grunt) {
             minifiyJs: {
                 files: [
                     'src/aping-instagram-directive.js',
-                    'src/aping-instagram-helper.js'
+                    'src/aping-instagram-helper.js',
+                    'bower_components/angular-instagram-api-factory/src/angular-instagram-api-factory.js'
+
                 ],
                 tasks: ['uglify'],
                 options: {

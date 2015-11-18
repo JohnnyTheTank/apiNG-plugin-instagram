@@ -1,6 +1,6 @@
 {
   "name": "aping-plugin-instagram",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "instagram plugin for apiNG",
   "main": "Gruntfile.js",
   "scripts": {
