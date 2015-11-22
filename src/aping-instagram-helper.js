@@ -46,7 +46,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         var socialObject = apingModels.getNew("social", "instagram");
 
         $.extend(true, socialObject, {
-            blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
+            blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
             blog_link: "https://instagram.com/" + _item.user.username,
             intern_type: _item.type,
@@ -90,7 +90,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         var videoObject = apingModels.getNew("video", "instagram");
 
         $.extend(true, videoObject, {
-            blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
+            blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
             blog_link: "https://instagram.com/" + _item.user.username,
             intern_type: _item.type,
@@ -120,7 +120,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
 
         var imageObject = apingModels.getNew("image", "instagram");
         $.extend(true, imageObject, {
-            blog_name: _item.user.full_name ? _item.user.full_name + " (@" + _item.user.username + ")" : "@" + _item.user.username,
+            blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
             blog_link: "https://instagram.com/" + _item.user.username,
             intern_type: _item.type,
