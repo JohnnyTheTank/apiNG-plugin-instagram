@@ -24,7 +24,10 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
 
                     var item = _this.getItemByJsonData(value, _type);
                     if(item) {
-                        requestResults.push(item);
+                        var tempResult = _this.getItemByJsonData(value, _type);
+                        if(tempResult) {
+                            requestResults.push(tempResult);
+                        }
                     }
                 });
             }
@@ -45,6 +48,8 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
                 case "image":
                     returnObject = this.getImageItemByJsonData(_item);
                     break;
+                default:
+                    return false;
             }
         }
         return returnObject;
