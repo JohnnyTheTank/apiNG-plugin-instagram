@@ -67,26 +67,15 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             post_url: _item.link,
             intern_id: _item.id,
             text: _item.caption ? _item.caption.text : false,
-            tags: _item.tags,
-            date: apingTimeHelper.getConvertedTimestamp(_item.created_time),
             likes: _item.likes ? _item.likes.count : false,
             comments: _item.comments ? _item.likes.comments : false,
         });
 
         socialObject.text = this.replaceHashtagWithoutSpaces(socialObject.text);
 
-        switch (_item.type) {
-            case "image":
-                socialObject.type = "image";
-                break;
-
-            case "video":
-                socialObject.type = "video";
-                socialObject.source = _item.videos.standard_resolution.url;
-                break;
-
-            default:
-                break;
+        if (_item.type == "video") {
+            socialObject.type = "video";
+            socialObject.source = _item.videos;
         }
 
         socialObject.img_url = _item.images.standard_resolution.url;
@@ -111,8 +100,6 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             post_url: _item.link,
             intern_id: _item.id,
             text: _item.caption ? _item.caption.text : false,
-            tags: _item.tags,
-            date: apingTimeHelper.getConvertedTimestamp(_item.created_time),
             likes: _item.likes ? _item.likes.count : false,
             comments: _item.comments ? _item.likes.comments : false,
             type: "video",
@@ -141,8 +128,6 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             post_url: _item.link,
             intern_id: _item.id,
             text: _item.caption ? _item.caption.text : false,
-            tags: _item.tags,
-            date: apingTimeHelper.getConvertedTimestamp(_item.created_time),
             likes: _item.likes ? _item.likes.count : false,
             comments: _item.comments ? _item.likes.comments : false,
             type: "image",

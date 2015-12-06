@@ -29,14 +29,32 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                     if (request.userId) { //search for userId
                         instagramSearchObject.userId = request.userId;
 
-                        instagramFactory.getPostsFromUserById(instagramSearchObject).success(function (_data) {
+                        instagramFactory.getMediaFromUserById(instagramSearchObject).success(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, appSettings.type));
                         }).error(function (_data) {
                             //on error
                         });
                     } else if (request.tag) { //search for searchterm
                         instagramSearchObject.tag = request.tag;
-                        instagramFactory.getPostsByTag(instagramSearchObject).success(function (_data) {
+                        instagramFactory.getMediaByTag(instagramSearchObject).success(function (_data) {
+                            apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, appSettings.type));
+                        }).error(function (_data) {
+                            //on error
+                        });
+                    } else if (request.locationId) { //search for locationId
+                        instagramSearchObject.locationId = request.locationId;
+                        instagramFactory.getMediaFromLocationById(instagramSearchObject).success(function (_data) {
+                            apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, appSettings.type));
+                        }).error(function (_data) {
+                            //on error
+                        });
+                    } else if (request.lat && request.lng) { //search for coordinates
+                        instagramSearchObject.lat = request.lat;
+                        instagramSearchObject.lng = request.lng;
+                        if(request.distance) {
+                            instagramSearchObject.distance = request.distance
+                        }
+                        instagramFactory.getMediaByCoordinates(instagramSearchObject).success(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, appSettings.type));
                         }).error(function (_data) {
                             //on error
