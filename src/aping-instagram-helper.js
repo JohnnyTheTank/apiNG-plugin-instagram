@@ -15,16 +15,16 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         return "https://instagram.com/";
     };
 
-    this.getObjectByJsonData = function (_data, _type) {
+    this.getObjectByJsonData = function (_data, _model) {
         var requestResults = [];
         if (_data) {
             var _this = this;
             if (_data.data) {
                 angular.forEach(_data.data, function (value, key) {
 
-                    var item = _this.getItemByJsonData(value, _type);
+                    var item = _this.getItemByJsonData(value, _model);
                     if(item) {
-                        var tempResult = _this.getItemByJsonData(value, _type);
+                        var tempResult = _this.getItemByJsonData(value, _model);
                         if(tempResult) {
                             requestResults.push(tempResult);
                         }
@@ -35,10 +35,10 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         return requestResults;
     };
 
-    this.getItemByJsonData = function (_item, _type) {
+    this.getItemByJsonData = function (_item, _model) {
         var returnObject = {};
-        if (_item && _type) {
-            switch (_type) {
+        if (_item && _model) {
+            switch (_model) {
                 case "social":
                     returnObject = this.getSocialItemByJsonData(_item);
                     break;
