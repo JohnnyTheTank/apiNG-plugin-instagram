@@ -71,6 +71,8 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             comments: _item.comments ? _item.likes.comments : false,
         });
 
+        socialObject.date_time = new Date(socialObject.timestamp);
+
         socialObject.text = this.replaceHashtagWithoutSpaces(socialObject.text);
 
         if (_item.type == "video") {
@@ -106,10 +108,9 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             source: _item.videos.standard_resolution ? _item.videos.standard_resolution.url : false,
         });
 
+        videoObject.date_time = new Date(videoObject.timestamp);
         videoObject.text = this.replaceHashtagWithoutSpaces(videoObject.text);
-
         videoObject.img_url = _item.images.standard_resolution.url;
-
         return videoObject;
     };
 
@@ -133,6 +134,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             type: "image",
         });
 
+        imageObject.date_time = new Date(imageObject.timestamp);
         imageObject.text = this.replaceHashtagWithoutSpaces(imageObject.text);
         imageObject.img_url = _item.images.standard_resolution.url;
         return imageObject;

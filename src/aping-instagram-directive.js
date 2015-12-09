@@ -7,7 +7,7 @@
  */
 
 var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
-    .directive('apingInstagram', ['instagramFactory', 'apingApiKeys', 'apingInstagramHelper', 'apingUtilityHelper', function (instagramFactory, apingApiKeys, apingInstagramHelper, apingUtilityHelper) {
+    .directive('apingInstagram', ['instagramFactory', 'apingInstagramHelper', 'apingUtilityHelper', function (instagramFactory, apingInstagramHelper, apingUtilityHelper) {
         return {
             require: '?aping',
             restrict: 'A',
@@ -21,8 +21,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                 requests.forEach(function (request) {
 
                     var instagramSearchObject = {
-                        access_token: apingApiKeys.instagram,
-                        client_id: apingApiKeys.instagramClientId,
+                        access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlattformString(), "access_token"),
                         count: request.items || appSettings.items,
                     };
 

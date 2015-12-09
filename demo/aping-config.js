@@ -2,8 +2,7 @@
 apingApp.config(['$provide', function ($provide) {
 
     $provide.constant("apingApiKeys", {
-        instagram: "3283222.a492704.6c2d53acdc3e47e695dff5c89368597d",
-        instagramClientId: "a492704dfef24d9ebcc8c3062a10daaf",
+        instagram: [{'access_token':'3283222.a492704.6c2d53acdc3e47e695dff5c89368597d'}],
     });
 
     $provide.constant("apingDefaultSettings", {
