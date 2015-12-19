@@ -15,19 +15,30 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         return "https://instagram.com/";
     };
 
-    this.getObjectByJsonData = function (_data, _model) {
+    this.replaceHashtagWithoutSpaces = function(_string) {
+        if(_string && $.type(_string) === "string") {
+            _string = _string.replace(/#/g, " #");
+            _string = _string.replace(/  #/g, " #");
+        }
+        return _string;
+    };
+
+    this.getObjectByJsonData = function (_data, _helperObject) {
         var requestResults = [];
         if (_data) {
             var _this = this;
             if (_data.data) {
                 angular.forEach(_data.data, function (value, key) {
 
-                    var item = _this.getItemByJsonData(value, _model);
-                    if(item) {
-                        var tempResult = _this.getItemByJsonData(value, _model);
-                        if(tempResult) {
-                            requestResults.push(tempResult);
-                        }
+
+                    var tempResult;
+                    if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
+                        tempResult = _this.getNativeItemByJsonData(value, _helperObject.model);
+                    } else {
+                        tempResult = _this.getItemByJsonData(value, _helperObject.model);
+                    }
+                    if(tempResult) {
+                        requestResults.push(tempResult);
                     }
                 });
             }
@@ -140,11 +151,32 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         return imageObject;
     };
 
-    this.replaceHashtagWithoutSpaces = function(_string) {
-        if(_string && $.type(_string) === "string") {
-            _string = _string.replace(/#/g, " #");
-            _string = _string.replace(/  #/g, " #");
+    this.getNativeItemByJsonData = function (_item, _model) {
+
+        var nativeItem = {};
+
+        switch (_model) {
+            case "image":
+                if(_item.type != "image") {
+                    return false;
+                } else {
+                    nativeItem = _item;
+                }
+                break;
+
+            case "video":
+                if(_item.type != "video") {
+                    return false;
+                } else {
+                    nativeItem = _item;
+                }
+                break;
         }
-        return _string;
-    }
+
+        nativeItem = _item;
+
+        return nativeItem;
+    };
+
+
 }]);

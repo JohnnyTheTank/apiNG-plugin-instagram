@@ -2,7 +2,7 @@
 apingApp.config(['$provide', function ($provide) {
 
     $provide.constant("apingApiKeys", {
-        instagram: [{'access_token':'3283222.a492704.6c2d53acdc3e47e695dff5c89368597d'}],
+        instagram: [{'access_token':'<YOUR_INSTAGRAM_ACCESS_TOKEN>'}],
     });
 
     $provide.constant("apingDefaultSettings", {
@@ -12,6 +12,7 @@ apingApp.config(['$provide', function ($provide) {
         orderBy : "timestamp",
         orderReverse : "true",
         model: "social",
+        getNativeData: false,
     });
 
 }]);
