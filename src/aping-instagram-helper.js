@@ -77,9 +77,9 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
             intern_id: _item.id,
-            text: _item.caption ? _item.caption.text : false,
-            likes: _item.likes ? _item.likes.count : false,
-            comments: _item.comments ? _item.likes.comments : false,
+            text: _item.caption ? _item.caption.text : undefined,
+            likes: _item.likes ? _item.likes.count : undefined,
+            comments: _item.comments ? _item.likes.comments : undefined,
         });
 
         socialObject.date_time = new Date(socialObject.timestamp);
@@ -112,11 +112,11 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
             intern_id: _item.id,
-            text: _item.caption ? _item.caption.text : false,
-            likes: _item.likes ? _item.likes.count : false,
-            comments: _item.comments ? _item.likes.comments : false,
+            text: _item.caption ? _item.caption.text : undefined,
+            likes: _item.likes ? _item.likes.count : undefined,
+            comments: _item.comments ? _item.likes.comments : undefined,
             type: "video",
-            source: _item.videos.standard_resolution ? _item.videos.standard_resolution.url : false,
+            source: _item.videos.standard_resolution ? _item.videos.standard_resolution.url : undefined,
         });
 
         videoObject.date_time = new Date(videoObject.timestamp);
@@ -139,9 +139,9 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
             intern_id: _item.id,
-            text: _item.caption ? _item.caption.text : false,
-            likes: _item.likes ? _item.likes.count : false,
-            comments: _item.comments ? _item.likes.comments : false,
+            text: _item.caption ? _item.caption.text : undefined,
+            likes: _item.likes ? _item.likes.count : undefined,
+            comments: _item.comments ? _item.likes.comments : undefined,
             type: "image",
         });
 
