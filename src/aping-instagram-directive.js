@@ -33,8 +33,27 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                     //create requestObject for api request call
                     var requestObject = {
                         access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlattformString(), "access_token"),
-                        count: request.items || appSettings.items,
                     };
+
+                    if(typeof request.items !== "undefined") {
+                        requestObject.count = request.items;
+                    } else {
+                        requestObject.count = appSettings.items;
+                    }
+
+                    if(requestObject.count == 0) {
+                        return false;
+                    }
+
+                    // -1 is "no explicit limit". same for NaN value
+                    if(requestObject.count < 0 || isNaN(requestObject.count)) {
+                        requestObject.count = undefined;
+                    }
+
+                    // the api has a limit of 33 items per request
+                    if(requestObject.count > 33) {
+                        requestObject.count = 33;
+                    }
 
                     if (request.userId) { //search for userId
                         requestObject.userId = request.userId;
