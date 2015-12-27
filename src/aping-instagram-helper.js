@@ -117,6 +117,8 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             comments: _item.comments ? _item.likes.comments : undefined,
             type: "video",
             source: _item.videos.standard_resolution ? _item.videos.standard_resolution.url : undefined,
+            width: _item.videos.standard_resolution ? _item.videos.standard_resolution.width : undefined,
+            height: _item.videos.standard_resolution ? _item.videos.standard_resolution.height : undefined,
         });
 
         videoObject.date_time = new Date(videoObject.timestamp);
@@ -142,12 +144,23 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             text: _item.caption ? _item.caption.text : undefined,
             likes: _item.likes ? _item.likes.count : undefined,
             comments: _item.comments ? _item.likes.comments : undefined,
+
+            thumb_url : _item.images.low_resolution.url,
+            thumb_width : _item.images.low_resolution.width,
+            thumb_height : _item.images.low_resolution.height,
+
+            img_url : _item.images.standard_resolution.url,
+            img_width : _item.images.standard_resolution.width,
+            img_height : _item.images.standard_resolution.height,
+
+            native_url : _item.images.standard_resolution.url.replace("s640x640/",""),
             type: "image",
         });
 
         imageObject.date_time = new Date(imageObject.timestamp);
         imageObject.text = this.replaceHashtagWithoutSpaces(imageObject.text);
-        imageObject.img_url = _item.images.standard_resolution.url;
+
+
         return imageObject;
     };
 
