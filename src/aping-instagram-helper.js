@@ -165,9 +165,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
     };
 
     this.getNativeItemByJsonData = function (_item, _model) {
-
         var nativeItem = {};
-
         switch (_model) {
             case "image":
                 if(_item.type != "image") {
@@ -185,11 +183,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
                 }
                 break;
         }
-
         nativeItem = _item;
-
         return nativeItem;
     };
-
-
 }]);
