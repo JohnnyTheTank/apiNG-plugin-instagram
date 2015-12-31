@@ -52,8 +52,6 @@ Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and co
     b) Insert your `access_token` into `aping-config.js`
 
 ### a) Generate your `access_token`
-_coming soon_
-
 1. Login on [instagram.com/developer](https://www.instagram.com/developer/)
 2. Navigate to [instagram.com/developer/clients/manage](https://www.instagram.com/developer/clients/manage/)
 3. Register a New Client
