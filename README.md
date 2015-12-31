@@ -58,14 +58,15 @@ Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and co
 4. Generate access_token
     * Open `https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code` with information from http://instagram.com/developer/clients/manage/
     * OR via curl:
+```
+curl \-F 'client_id=CLIENT-ID' \
+    -F 'client_secret=CLIENT-SECRET' \
+    -F 'grant_type=authorization_code' \
+    -F 'redirect_uri=YOUR-REDIRECT-URI' \
+    -F 'code=CODE' \
+    https://api.instagram.com/oauth/access_token
+```
 
-
-    curl \-F 'client_id=CLIENT-ID' \
-          -F 'client_secret=CLIENT-SECRET' \
-          -F 'grant_type=authorization_code' \
-          -F 'redirect_uri=YOUR-REDIRECT-URI' \
-          -F 'code=CODE' \
-          https://api.instagram.com/oauth/access_token
 
 ### b) Insert your `access_token` into `aping-config.js`
 Open `js/apiNG/aping-config.js` in your application folder. It should be look like this snippet:
