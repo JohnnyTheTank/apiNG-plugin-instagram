@@ -6,7 +6,6 @@
 
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="../bower_components/apiNG/dist/aping.min.js"></script>
     <script src="aping-config.js"></script>
     <script src="app.js"></script>
@@ -15,14 +14,14 @@
     <script src="../src/aping-instagram-helper.js"></script>
 </head>
 <body ng-app="app">
+    <h1>[{'locationId':'24245'}]</h1>
+    <aping model="image" aping-instagram="[{'locationId':'24245'}]"></aping>
+    <hr>
     <h1>[{'userId':'416104304'}]</h1>
-    <aping model="social" aping-instagram="[{'userId':'416104304'}]"></aping>
+    <aping model="image" aping-instagram="[{'userId':'416104304'}]"></aping>
     <hr>
     <h1>[{'tag':'camping'}]</h1>
     <aping model="social" aping-instagram="[{'tag':'camping'}]"></aping>
-    <hr>
-    <h1>[{'locationId':'24245'}]</h1>
-    <aping model="social" aping-instagram="[{'locationId':'24245'}]"></aping>
     <hr>
     <h1>[{'lat':'48.000', 'lng':'11.000'}]</h1>
     <aping model="social" aping-instagram="[{'lat':'48.000', 'lng':'11.000'}]"></aping>
