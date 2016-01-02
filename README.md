@@ -27,7 +27,7 @@ You can choose your preferred method of installation:
 ### b) Include files
 Include `apiNG-plugin-instagram.min.js` in your apiNG application
 ```html
-<script src="bower_components/apiNG-plugin-instagram/dist/apiNG-plugin-instagram.min.js"></script>
+<script src="bower_components/apiNG-plugin-instagram/dist/aping-plugin-instagram.min.js"></script>
 ```
 
 ### c) Add dependencies
