@@ -1,11 +1,5 @@
 "use strict";
 
-/**
- @author Jonathan Hornung (https://github.com/JohnnyTheTank)
- @url https://github.com/JohnnyTheTank/apiNG-instagram-plugin
- @licence MIT
- */
-
 var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
     .directive('apingInstagram', ['instagramFactory', 'apingInstagramHelper', 'apingUtilityHelper', function (instagramFactory, apingInstagramHelper, apingUtilityHelper) {
         return {
@@ -58,24 +52,18 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                     if (request.userId) { //search for userId
                         requestObject.userId = request.userId;
 
-                        instagramFactory.getMediaFromUserById(requestObject).success(function (_data) {
+                        instagramFactory.getMediaFromUserById(requestObject).then(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, helperObject));
-                        }).error(function (_data) {
-                            //on error
                         });
                     } else if (request.tag) { //search for searchterm
                         requestObject.tag = request.tag;
-                        instagramFactory.getMediaByTag(requestObject).success(function (_data) {
+                        instagramFactory.getMediaByTag(requestObject).then(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, helperObject));
-                        }).error(function (_data) {
-                            //on error
                         });
                     } else if (request.locationId) { //search for locationId
                         requestObject.locationId = request.locationId;
-                        instagramFactory.getMediaFromLocationById(requestObject).success(function (_data) {
+                        instagramFactory.getMediaFromLocationById(requestObject).then(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, helperObject));
-                        }).error(function (_data) {
-                            //on error
                         });
                     } else if (request.lat && request.lng) { //search for coordinates
                         requestObject.lat = request.lat;
@@ -83,10 +71,8 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         if(request.distance) {
                             requestObject.distance = request.distance
                         }
-                        instagramFactory.getMediaByCoordinates(requestObject).success(function (_data) {
+                        instagramFactory.getMediaByCoordinates(requestObject).then(function (_data) {
                             apingController.concatToResults(apingInstagramHelper.getObjectByJsonData(_data, helperObject));
-                        }).error(function (_data) {
-                            //on error
                         });
                     }
                 });

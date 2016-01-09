@@ -1,11 +1,5 @@
 "use strict";
 
-/**
- @author Jonathan Hornung (https://github.com/JohnnyTheTank)
- @url https://github.com/JohnnyTheTank/apiNG-instagram-plugin
- @licence MIT
- */
-
 jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelper', 'apingUtilityHelper', function (apingModels, apingTimeHelper, apingUtilityHelper) {
     this.getThisPlattformString = function () {
         return "instagram";
@@ -27,9 +21,8 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         var requestResults = [];
         if (_data) {
             var _this = this;
-            if (_data.data) {
-                angular.forEach(_data.data, function (value, key) {
-
+            if (_data.data && _data.data.data) {
+                angular.forEach(_data.data.data, function (value, key) {
 
                     var tempResult;
                     if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
