@@ -5,29 +5,35 @@
 
 # Information
 * **Supported apiNG models: `social`, `video`, `image`**
+* This plugin supports the [`get-native-data` parameter](https://aping.readme.io/docs/configuration#parameters)
+* This plugin needs an [access token](#2-access-token) :warning:
 * Used promise library: [angular-instagram-api-factory](https://github.com/JohnnyTheTank/angular-instagram-api-factory) _(included in distribution files)_
 
 # Documentation
-    I.   INSTALLATION
-    II.  ACCESS TOKEN
-    III. USAGE
 
-## I. INSTALLATION
-    a) Get file
-    b) Include file
-    c) Add dependencies
-    d) Add the plugin
+1. [INSTALLATION](#1-installation)
+    1. Get file
+    2. Include file
+    3. Add dependencies
+    4. Add plugin
+2. [ACCESS TOKEN](#2-access-token)
+    1. Generate your `access_token`
+    2. Insert your `access_token` into `aping-config.js`
+3. [USAGE](#3-usage)
+    1. Models
+    2. Requests
+    3. Rate limit
 
-### a) Get file
-You can choose your preferred method of installation:
+## 1. INSTALLATION
 
+### I. Get file
 Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
 
 * `bower install apiNG-plugin-instagram --save`
 * `npm install aping-plugin-instagram --save`
 * download [apiNG-plugin-instagram.zip](https://github.com/JohnnyTheTank/apiNG-plugin-instagram/zipball/master)
 
-### b) Include file
+### II. Include file
 Include `aping-plugin-instagram.min.js` in your apiNG application
 
 ```html
@@ -41,13 +47,13 @@ Include `aping-plugin-instagram.min.js` in your apiNG application
 <script src="aping-plugin-instagram.min.js"></script>
 ```
 
-### c) Add dependencies
+### III. Add dependencies
 Add the module `jtt_aping_instagram` as a dependency to your app module:
 ```js
 var app = angular.module('app', ['jtt_aping', 'jtt_aping_instagram']);
 ```
 
-### d) Add the plugin
+### IV. Add the plugin
 Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and configure your requests (_**III. USAGE**_)
 ```html
 <aping
@@ -58,11 +64,9 @@ Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and co
 </aping>
 ```
 
-## II. ACCESS TOKEN
-    a) Generate your `access_token`
-    b) Insert your `access_token` into `aping-config.js`
+## 2. ACCESS TOKEN
 
-### a) Generate your `access_token`
+### I. Generate your `access_token`
 1. Login on [instagram.com/developer](https://www.instagram.com/developer/)
 2. Navigate to [instagram.com/developer/clients/manage](https://www.instagram.com/developer/clients/manage/)
 3. Register a New Client
@@ -79,7 +83,7 @@ curl \-F 'client_id=CLIENT-ID' \
 ```
 
 
-### b) Insert your `access_token` into `aping-config.js`
+### II. Insert your `access_token` into `aping-config.js`
 Open `js/apiNG/aping-config.js` in your application folder. It should be look like this snippet:
 ```js
 apingApp.config(['$provide', function ($provide) {
@@ -99,12 +103,9 @@ apingApp.config(['$provide', function ($provide) {
 
 :warning: Replace `<YOUR_INSTAGRAM_ACCESS_TOKEN>` with your instagram `access_token`
 
-## III. USAGE
-    a) Models
-    b) Requests
-    c) Rate limit
+## 3. USAGE
 
-### a) Models
+### I. Models
 Supported apiNG models
 
 |  model   | content | support | max items<br>per request | (native) default items<br>per request |
@@ -118,7 +119,7 @@ Supported apiNG models
 * partly: _the source platfrom provides just partly usable results_
 
 
-### b) Requests
+### II. Requests
 Every **apiNG plugin** expects an array of **requests** as html attribute.
 
 #### Requests by Tag
@@ -161,11 +162,10 @@ Sample requests:
 * `[{'locationId':'24245', 'items':30}]`
 
 
-### c) Rate limit
+### III. Rate limit
 Visit the official [Instagram API documentation](https://www.instagram.com/developer/limits/)
 
-**The live Rate Limit is 5000 / hour.** Global rate limits are applied inclusive of all API calls made by an app per access token over the 1-hour sliding window, regardless of the particular endpoint. Rate limits also apply to invalid or malformed requests.
-
+> **The live Rate Limit is 5000 / hour.** Global rate limits are applied inclusive of all API calls made by an app per access token over the 1-hour sliding window, regardless of the particular endpoint. Rate limits also apply to invalid or malformed requests.
 
 # Licence
 MIT
