@@ -54,7 +54,7 @@ var app = angular.module('app', ['jtt_aping', 'jtt_aping_instagram']);
 ```
 
 ### IV. Add the plugin
-Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and configure your requests (_**III. USAGE**_)
+Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and [configure your requests](#ii-requests)
 ```html
 <aping
     template-url="templates/social.html"

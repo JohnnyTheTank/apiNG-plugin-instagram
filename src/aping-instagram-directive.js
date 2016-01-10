@@ -18,7 +18,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                     var helperObject = {
                         model: appSettings.model,
                     };
-                    if(typeof appSettings.getNativeData !== "undefined") {
+                    if (typeof appSettings.getNativeData !== "undefined") {
                         helperObject.getNativeData = appSettings.getNativeData;
                     } else {
                         helperObject.getNativeData = false;
@@ -29,23 +29,23 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlattformString(), "access_token"),
                     };
 
-                    if(typeof request.items !== "undefined") {
+                    if (typeof request.items !== "undefined") {
                         requestObject.count = request.items;
                     } else {
                         requestObject.count = appSettings.items;
                     }
 
-                    if(requestObject.count == 0) {
+                    if (requestObject.count == 0) {
                         return false;
                     }
 
                     // -1 is "no explicit limit". same for NaN value
-                    if(requestObject.count < 0 || isNaN(requestObject.count)) {
+                    if (requestObject.count < 0 || isNaN(requestObject.count)) {
                         requestObject.count = undefined;
                     }
 
                     // the api has a limit of 33 items per request
-                    if(requestObject.count > 33) {
+                    if (requestObject.count > 33) {
                         requestObject.count = 33;
                     }
 
@@ -68,7 +68,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                     } else if (request.lat && request.lng) { //search for coordinates
                         requestObject.lat = request.lat;
                         requestObject.lng = request.lng;
-                        if(request.distance) {
+                        if (request.distance) {
                             requestObject.distance = request.distance
                         }
                         instagramFactory.getMediaByCoordinates(requestObject).then(function (_data) {

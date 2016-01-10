@@ -9,8 +9,8 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         return "https://instagram.com/";
     };
 
-    this.replaceHashtagWithoutSpaces = function(_string) {
-        if(_string && $.type(_string) === "string") {
+    this.replaceHashtagWithoutSpaces = function (_string) {
+        if (_string && $.type(_string) === "string") {
             _string = _string.replace(/#/g, " #");
             _string = _string.replace(/  #/g, " #");
         }
@@ -25,12 +25,12 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
                 angular.forEach(_data.data.data, function (value, key) {
 
                     var tempResult;
-                    if(_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
+                    if (_helperObject.getNativeData === true || _helperObject.getNativeData === "true") {
                         tempResult = _this.getNativeItemByJsonData(value, _helperObject.model);
                     } else {
                         tempResult = _this.getItemByJsonData(value, _helperObject.model);
                     }
-                    if(tempResult) {
+                    if (tempResult) {
                         requestResults.push(tempResult);
                     }
                 });
@@ -91,7 +91,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
 
     this.getVideoItemByJsonData = function (_item) {
 
-        if(_item.type != "video") {
+        if (_item.type != "video") {
             return false;
         }
 
@@ -121,7 +121,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
     };
 
     this.getImageItemByJsonData = function (_item) {
-        if(_item.type != "image") {
+        if (_item.type != "image") {
             return false;
         }
 
@@ -138,15 +138,15 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             likes: _item.likes ? _item.likes.count : undefined,
             comments: _item.comments ? _item.likes.comments : undefined,
 
-            thumb_url : _item.images.low_resolution.url,
-            thumb_width : _item.images.low_resolution.width,
-            thumb_height : _item.images.low_resolution.height,
+            thumb_url: _item.images.low_resolution.url,
+            thumb_width: _item.images.low_resolution.width,
+            thumb_height: _item.images.low_resolution.height,
 
-            img_url : _item.images.standard_resolution.url,
-            img_width : _item.images.standard_resolution.width,
-            img_height : _item.images.standard_resolution.height,
+            img_url: _item.images.standard_resolution.url,
+            img_width: _item.images.standard_resolution.width,
+            img_height: _item.images.standard_resolution.height,
 
-            native_url : _item.images.standard_resolution.url.replace("s640x640/",""),
+            native_url: _item.images.standard_resolution.url.replace("s640x640/", ""),
             type: "image",
         });
 
@@ -161,7 +161,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
         var nativeItem = {};
         switch (_model) {
             case "image":
-                if(_item.type != "image") {
+                if (_item.type != "image") {
                     return false;
                 } else {
                     nativeItem = _item;
@@ -169,7 +169,7 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
                 break;
 
             case "video":
-                if(_item.type != "video") {
+                if (_item.type != "video") {
                     return false;
                 } else {
                     nativeItem = _item;
