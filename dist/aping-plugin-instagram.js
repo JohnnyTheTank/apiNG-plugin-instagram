@@ -1,6 +1,6 @@
 /**
     @name: aping-plugin-instagram 
-    @version: 0.7.5 (10-01-2016) 
+    @version: 0.7.6 (11-01-2016) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-instagram 
     @license: MIT
@@ -42,7 +42,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         requestObject.count = appSettings.items;
                     }
 
-                    if (requestObject.count == 0) {
+                    if (requestObject.count === 0 || requestObject.count === '0') {
                         return false;
                     }
 

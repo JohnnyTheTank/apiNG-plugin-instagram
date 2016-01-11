@@ -84,19 +84,17 @@ curl \-F 'client_id=CLIENT-ID' \
 
 
 ### II. Insert your `access_token` into `aping-config.js`
-Open `js/apiNG/aping-config.js` in your application folder. It should be look like this snippet:
+Create and open `js/apiNG/aping-config.js` in your application folder. It should be look like this snippet:
 ```js
 apingApp.config(['$provide', function ($provide) {
-    $provide.constant("apingApiKeys", {
-        //...
-        instagram : [
-            {'access_token':'<YOUR_INSTAGRAM_ACCESS_TOKEN>'},
-        ]
-        //...
-    });
-
-    $provide.constant("apingDefaultSettings", {
-        //...
+    $provide.value("apingDefaultSettings", {
+        apingApiKeys : {
+            //...
+            instagram : [
+                {'access_token':'<YOUR_INSTAGRAM_ACCESS_TOKEN>'},
+            ]
+            //...
+        }
     });
 }]);
 ```

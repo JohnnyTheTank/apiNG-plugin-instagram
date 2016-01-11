@@ -35,7 +35,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         requestObject.count = appSettings.items;
                     }
 
-                    if (requestObject.count == 0) {
+                    if (requestObject.count === 0 || requestObject.count === '0') {
                         return false;
                     }
 
