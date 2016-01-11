@@ -10,7 +10,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
 
                 var appSettings = apingController.getAppSettings();
 
-                var requests = apingUtilityHelper.parseJsonFromAttributes(attrs.apingInstagram, apingInstagramHelper.getThisPlattformString(), appSettings);
+                var requests = apingUtilityHelper.parseJsonFromAttributes(attrs.apingInstagram, apingInstagramHelper.getThisPlatformString(), appSettings);
 
                 requests.forEach(function (request) {
 
@@ -26,7 +26,7 @@ var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
 
                     //create requestObject for api request call
                     var requestObject = {
-                        access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlattformString(), "access_token"),
+                        access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlatformString(), "access_token"),
                     };
 
                     if (typeof request.items !== "undefined") {

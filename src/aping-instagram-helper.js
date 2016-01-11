@@ -1,11 +1,11 @@
 "use strict";
 
 jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelper', 'apingUtilityHelper', function (apingModels, apingTimeHelper, apingUtilityHelper) {
-    this.getThisPlattformString = function () {
+    this.getThisPlatformString = function () {
         return "instagram";
     };
 
-    this.getThisPlattformLink = function () {
+    this.getThisPlatformLink = function () {
         return "https://instagram.com/";
     };
 
@@ -60,12 +60,12 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
     };
 
     this.getSocialItemByJsonData = function (_item) {
-        var socialObject = apingModels.getNew("social", this.getThisPlattformString());
+        var socialObject = apingModels.getNew("social", this.getThisPlatformString());
 
         $.extend(true, socialObject, {
             blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
-            blog_link: this.getThisPlattformLink() + _item.user.username,
+            blog_link: this.getThisPlatformLink() + _item.user.username,
             intern_type: _item.type,
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
@@ -95,12 +95,12 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             return false;
         }
 
-        var videoObject = apingModels.getNew("video", this.getThisPlattformString());
+        var videoObject = apingModels.getNew("video", this.getThisPlatformString());
 
         $.extend(true, videoObject, {
             blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
-            blog_link: this.getThisPlattformLink() + _item.user.username,
+            blog_link: this.getThisPlatformLink() + _item.user.username,
             intern_type: _item.type,
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
@@ -125,11 +125,11 @@ jjtApingInstagram.service('apingInstagramHelper', ['apingModels', 'apingTimeHelp
             return false;
         }
 
-        var imageObject = apingModels.getNew("image", this.getThisPlattformString());
+        var imageObject = apingModels.getNew("image", this.getThisPlatformString());
         $.extend(true, imageObject, {
             blog_name: _item.user.full_name || "@" + _item.user.username,
             blog_id: "@" + _item.user.username,
-            blog_link: this.getThisPlattformLink() + _item.user.username,
+            blog_link: this.getThisPlatformLink() + _item.user.username,
             intern_type: _item.type,
             timestamp: parseInt(_item.created_time) * 1000,
             post_url: _item.link,
