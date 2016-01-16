@@ -30,10 +30,11 @@
 ## 1. INSTALLATION
 
 ### I. Get file
-Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
+Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/), CDN (jsDelivr)  or downloaded files:
 
 * `bower install apiNG-plugin-instagram --save`
 * `npm install aping-plugin-instagram --save`
+* use CDN file
 * download [apiNG-plugin-instagram.zip](https://github.com/JohnnyTheTank/apiNG-plugin-instagram/zipball/master)
 
 ### II. Include file
@@ -45,6 +46,9 @@ Include `aping-plugin-instagram.min.js` in your apiNG application
 
 <!-- when using npm -->
 <script src="node_modules/aping-plugin-instagram/dist/aping-plugin-instagram.min.js"></script>
+
+<!-- when using cdn file -->
+<script src="//cdn.jsdelivr.net/aping.plugin-instagram/latest/aping-plugin-instagram.min.js"></script>
 
 <!-- when using downloaded files -->
 <script src="aping-plugin-instagram.min.js"></script>
