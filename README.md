@@ -34,7 +34,7 @@ Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/), CDN
 
 * `bower install apiNG-plugin-instagram --save`
 * `npm install aping-plugin-instagram --save`
-* use CDN file
+* use [CDN file](https://www.jsdelivr.com/projects/aping.plugin-instagram)
 * download [apiNG-plugin-instagram.zip](https://github.com/JohnnyTheTank/apiNG-plugin-instagram/zipball/master)
 
 ### II. Include file
