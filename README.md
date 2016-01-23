@@ -57,7 +57,7 @@ Include `aping-plugin-instagram.min.js` in your apiNG application
 ### III. Add dependency
 Add the module `jtt_aping_instagram` as a dependency to your app module:
 ```js
-var app = angular.module('app', ['jtt_aping', 'jtt_aping_instagram']);
+angular.module('app', ['jtt_aping', 'jtt_aping_instagram']);
 ```
 
 ### IV. Add the plugin

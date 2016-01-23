@@ -1,6 +1,6 @@
 "use strict";
 
-var jjtApingInstagram = angular.module("jtt_aping_instagram", ['jtt_instagram'])
+angular.module("jtt_aping_instagram", ['jtt_instagram'])
     .directive('apingInstagram', ['instagramFactory', 'apingInstagramHelper', 'apingUtilityHelper', function (instagramFactory, apingInstagramHelper, apingUtilityHelper) {
         return {
             require: '?aping',
