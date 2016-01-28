@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Instagram Demo</title>
 
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/apiNG/dist/aping.min.js"></script>
     <script src="aping-config.js"></script>
@@ -13,7 +12,10 @@
 </head>
 <body ng-app="app">
     <h1>[{'locationId':'24245'}]</h1>
-    <aping template-url="template.html" model="image" aping-instagram="[{'locationId':'24245'}]"></aping>
+    <aping
+            template-url="template.html"
+            model="image"
+            aping-instagram="[{'locationId':'24245'}]"></aping>
     <hr>
     <h1>[{'userId':'416104304'}]</h1>
     <aping template-url="template.html" model="image" aping-instagram="[{'userId':'416104304'}]"></aping>

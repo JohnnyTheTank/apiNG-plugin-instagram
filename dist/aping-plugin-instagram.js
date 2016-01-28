@@ -1,6 +1,6 @@
 /**
     @name: aping-plugin-instagram 
-    @version: 0.7.6 (24-01-2016) 
+    @version: 0.7.7 (28-01-2016) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-instagram 
     @license: MIT
@@ -99,7 +99,8 @@ angular.module("jtt_aping_instagram")
         };
 
         this.replaceHashtagWithoutSpaces = function (_string) {
-            if (_string && $.type(_string) === "string") {
+
+            if (_string && typeof _string === "string") {
                 _string = _string.replace(/#/g, " #");
                 _string = _string.replace(/  #/g, " #");
             }
@@ -151,7 +152,7 @@ angular.module("jtt_aping_instagram")
         this.getSocialItemByJsonData = function (_item) {
             var socialObject = apingModels.getNew("social", this.getThisPlatformString());
 
-            $.extend(true, socialObject, {
+            angular.extend(socialObject, {
                 blog_name: _item.user.full_name || "@" + _item.user.username,
                 blog_id: "@" + _item.user.username,
                 blog_link: this.getThisPlatformLink() + _item.user.username,
@@ -186,7 +187,7 @@ angular.module("jtt_aping_instagram")
 
             var videoObject = apingModels.getNew("video", this.getThisPlatformString());
 
-            $.extend(true, videoObject, {
+            angular.extend(videoObject, {
                 blog_name: _item.user.full_name || "@" + _item.user.username,
                 blog_id: "@" + _item.user.username,
                 blog_link: this.getThisPlatformLink() + _item.user.username,
@@ -215,7 +216,7 @@ angular.module("jtt_aping_instagram")
             }
 
             var imageObject = apingModels.getNew("image", this.getThisPlatformString());
-            $.extend(true, imageObject, {
+            angular.extend(imageObject, {
                 blog_name: _item.user.full_name || "@" + _item.user.username,
                 blog_id: "@" + _item.user.username,
                 blog_link: this.getThisPlatformLink() + _item.user.username,
