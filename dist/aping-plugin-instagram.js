@@ -163,6 +163,9 @@ angular.module("jtt_aping_instagram")
                 text: _item.caption ? _item.caption.text : undefined,
                 likes: _item.likes ? _item.likes.count : undefined,
                 comments: _item.comments ? _item.likes.comments : undefined,
+                thumb_url: _item.images.low_resolution.url,
+                img_url: _item.images.standard_resolution.url,
+                native_url: _item.images.standard_resolution.url.replace("s640x640/", ""),
             });
 
             socialObject.date_time = new Date(socialObject.timestamp);
@@ -174,7 +177,6 @@ angular.module("jtt_aping_instagram")
                 socialObject.source = _item.videos;
             }
 
-            socialObject.img_url = _item.images.standard_resolution.url;
 
             return socialObject;
         };
@@ -202,11 +204,13 @@ angular.module("jtt_aping_instagram")
                 source: _item.videos.standard_resolution ? _item.videos.standard_resolution.url : undefined,
                 width: _item.videos.standard_resolution ? _item.videos.standard_resolution.width : undefined,
                 height: _item.videos.standard_resolution ? _item.videos.standard_resolution.height : undefined,
+                thumb_url: _item.images.low_resolution.url,
+                img_url: _item.images.standard_resolution.url,
+                native_url: _item.images.standard_resolution.url.replace("s640x640/", ""),
             });
 
             videoObject.date_time = new Date(videoObject.timestamp);
             videoObject.text = this.replaceHashtagWithoutSpaces(videoObject.text);
-            videoObject.img_url = _item.images.standard_resolution.url;
             return videoObject;
         };
 
