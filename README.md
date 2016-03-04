@@ -83,14 +83,14 @@ Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and [c
         * Accept the alert from instagram
         * Get your access_token from the url bar of your browser
     2. via curl:
-```
-curl \-F 'client_id=CLIENT-ID' \
-    -F 'client_secret=CLIENT-SECRET' \
-    -F 'grant_type=authorization_code' \
-    -F 'redirect_uri=YOUR-REDIRECT-URI' \
-    -F 'code=CODE' \
-    https://api.instagram.com/oauth/access_token
-```
+        ```
+        curl \-F 'client_id=CLIENT-ID' \
+            -F 'client_secret=CLIENT-SECRET' \
+            -F 'grant_type=authorization_code' \
+            -F 'redirect_uri=YOUR-REDIRECT-URI' \
+            -F 'code=CODE' \
+            https://api.instagram.com/oauth/access_token
+        ```
 
 
 ### II. Insert your `access_token` into `aping-config.js`
