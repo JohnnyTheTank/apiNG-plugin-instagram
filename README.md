@@ -78,8 +78,11 @@ Add the plugin's directive `aping-instagram="[]"` to your apiNG directive and [c
 2. Navigate to [instagram.com/developer/clients/manage](https://www.instagram.com/developer/clients/manage/)
 3. Register a "New Client ID"
 4. Generate access_token
-    * Open `https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code` with information from http://instagram.com/developer/clients/manage/
-    * OR via curl:
+    1. via browser 
+        * Open `https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code` with information from http://instagram.com/developer/clients/manage/
+        * Accept the alert from instagram
+        * Get your access_token from the url bar of your browser
+    2. via curl:
 ```
 curl \-F 'client_id=CLIENT-ID' \
     -F 'client_secret=CLIENT-SECRET' \
