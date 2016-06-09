@@ -8,6 +8,9 @@
 **_apiNG-plugin-instagram_** is a [Instagram REST API](https://www.instagram.com/developer/endpoints/media/) plugin for [**apiNG**](https://github.com/JohnnyTheTank/apiNG).
 
 # Information
+
+:warning: **This use case isn't supported anymore. On June 1, 2016 Instagram changed the permissions and all apps moved automatically to Sandbox Mode if it wasn't approved through the [review process](https://www.instagram.com/developer/review/).**
+
 * **Supported apiNG models: `social`, `video`, `image`**
 * This plugin supports the [`get-native-data` parameter](https://aping.readme.io/docs/advanced#parameters)
 * This plugin needs an [access token](#2-access-token) :warning:
