@@ -52,7 +52,7 @@ Include `aping-plugin-instagram.min.js` in your apiNG application
 <script src="node_modules/aping-plugin-instagram/dist/aping-plugin-instagram.min.js"></script>
 
 <!-- when using cdn file -->
-<script src="//cdn.jsdelivr.net/aping.plugin-instagram/latest/aping-plugin-instagram.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aping-plugin-instagram@latest/dist/aping-plugin-instagram.min.js"></script>
 
 <!-- when using downloaded files -->
 <script src="aping-plugin-instagram.min.js"></script>
