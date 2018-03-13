@@ -1,6 +1,6 @@
 /**
     @name: aping-plugin-instagram 
-    @version: 0.7.7 (28-01-2016) 
+    @version: 0.8.0 (13-03-2018) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/apiNG-plugin-instagram 
     @license: MIT
@@ -276,7 +276,7 @@ angular.module("jtt_aping_instagram")
     }]);;"use strict";
 
 angular.module("jtt_instagram", [])
-    .factory('instagramFactory', ['$http', 'instagramSearchDataService', function ($http, instagramSearchDataService) {
+    .factory('instagramFactory', ['$sce', '$http', 'instagramSearchDataService', function ($sce, $http, instagramSearchDataService) {
 
         var instagramFactory = {};
 
@@ -285,7 +285,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("userById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -298,7 +298,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaFromUserById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -311,7 +311,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaByTag", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -324,7 +324,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaFromLocationById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -337,7 +337,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaByCoordinates", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -355,7 +355,7 @@ angular.module("jtt_instagram", [])
         this.fillDataInObjectByList = function(_object, _params, _list) {
 
             angular.forEach(_list, function (value, key) {
-                if(typeof _params[value] !== "undefined") {
+                if(angular.isDefined(_params[value])) {
                     _object.object[value] = _params[value];
                 }
             });
@@ -368,12 +368,12 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = {
                 object: {
                     access_token: _params.access_token,
-                    callback: "JSON_CALLBACK"
+                    jsonpCallbackParam: 'callback'
                 },
                 url: "",
             };
 
-            if(typeof _params.count !== "undefined") {
+            if(angular.isDefined(_params.count)) {
                 instagramSearchData.object.count = _params.count;
             }
 
@@ -411,6 +411,8 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"media/search";
                     break;
             }
+
+            instagramSearchData.url
 
             return instagramSearchData;
         };
