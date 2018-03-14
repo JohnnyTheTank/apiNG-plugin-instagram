@@ -1,6 +1,6 @@
 {
   "name": "aping-plugin-instagram",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Instagram plugin for apiNG",
   "main": "dist/aping-plugin-instagram.min.js",
   "scripts": {

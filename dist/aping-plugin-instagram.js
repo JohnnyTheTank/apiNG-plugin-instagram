@@ -36,6 +36,10 @@ angular.module("jtt_aping_instagram", ['jtt_instagram'])
                         access_token: apingUtilityHelper.getApiCredentials(apingInstagramHelper.getThisPlatformString(), "access_token"),
                     };
 
+                    if (request.accessToken) {
+                        requestObject.access_token = request.accessToken;
+                    }
+
                     if (typeof request.items !== "undefined") {
                         requestObject.count = request.items;
                     } else {
